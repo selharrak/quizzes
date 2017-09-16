@@ -30,9 +30,6 @@ public class Test {
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "quiz_id", nullable = false)
 	private Quiz quiz;
-	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "level_id", nullable = false)
-	private Level level;
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "test")
 	private Set<TestQuestion> testQuestions;
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "test")
@@ -84,14 +81,6 @@ public class Test {
 
 	public void setQuiz(Quiz quiz) {
 		this.quiz = quiz;
-	}
-
-	public Level getLevel() {
-		return level;
-	}
-
-	public void setLevel(Level level) {
-		this.level = level;
 	}
 
 	public Set<TestQuestion> getTestQuestions() {
