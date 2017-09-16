@@ -19,15 +19,16 @@ public class Response {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
-	private String response;
+	private String label;
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "response")
 	private Set<QuestionResponse> questionResponses;
-	
-	public Response() {	}
 
-	public Response(String response) {
+	public Response() {
+	}
+
+	public Response(String label) {
 		super();
-		this.response = response;
+		this.label = label;
 	}
 
 	public long getId() {
@@ -38,12 +39,12 @@ public class Response {
 		this.id = id;
 	}
 
-	public String getResponse() {
-		return response;
+	public String getLabel() {
+		return label;
 	}
 
-	public void setResponse(String response) {
-		this.response = response;
+	public void setLabel(String label) {
+		this.label = label;
 	}
 
 	public Set<QuestionResponse> getQuestionResponses() {

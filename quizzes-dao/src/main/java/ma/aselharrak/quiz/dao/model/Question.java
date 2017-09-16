@@ -21,7 +21,7 @@ public class Question {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
-	private String question;
+	private String label;
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "question")
 	private Set<TestQuestion> testQuestions;
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "response")
@@ -30,11 +30,12 @@ public class Question {
 	@JoinColumn(name = "level_id", nullable = false)
 	private Level level;
 
-	public Question() {}
+	public Question() {
+	}
 
-	public Question(String question) {
+	public Question(String label) {
 		super();
-		this.question = question;
+		this.label = label;
 	}
 
 	public long getId() {
@@ -45,12 +46,12 @@ public class Question {
 		this.id = id;
 	}
 
-	public String getQuestion() {
-		return question;
+	public String getLabel() {
+		return label;
 	}
 
-	public void setQuestion(String question) {
-		this.question = question;
+	public void setLabel(String label) {
+		this.label = label;
 	}
 
 	public Set<TestQuestion> getTestQuestions() {

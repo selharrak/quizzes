@@ -19,15 +19,16 @@ public class Role {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
-	private String role;
+	private String label;
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "role")
 	private Set<UserRole> userRoles;
-	
-	public Role() {}
 
-	public Role(String role) {
+	public Role() {
+	}
+
+	public Role(String label) {
 		super();
-		this.role = role;
+		this.label = label;
 	}
 
 	public long getId() {
@@ -38,12 +39,12 @@ public class Role {
 		this.id = id;
 	}
 
-	public String getRole() {
-		return role;
+	public String getLabel() {
+		return label;
 	}
 
-	public void setRole(String role) {
-		this.role = role;
+	public void setLabel(String label) {
+		this.label = label;
 	}
 
 	public Set<UserRole> getUserRoles() {
