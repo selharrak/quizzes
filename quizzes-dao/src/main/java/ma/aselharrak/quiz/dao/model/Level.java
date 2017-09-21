@@ -25,9 +25,8 @@ public class Level {
 
 	public Level() {}
 	
-	public Level(long id, String label) {
+	public Level(String label) {
 		super();
-		this.id = id;
 		this.label = label;
 	}
 

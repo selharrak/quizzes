@@ -1,9 +1,7 @@
 package ma.aselharrak.quiz.web.controller;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,7 +11,6 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import ma.aselharrak.quiz.dao.model.Quiz;
-import ma.aselharrak.quiz.dao.model.Test;
 import ma.aselharrak.quiz.web.data.UserData;
 import ma.aselharrak.quiz.web.facade.UserFacade;
 
@@ -31,7 +28,7 @@ public class HomeController {
 		return users;
 	}
 	
-	@RequestMapping(value = "quizzes")
+	@RequestMapping(value = "test")
 	public @ResponseBody List<Quiz> getQuizzes() {
 
 		List<Quiz> quizzes = new ArrayList<>();
