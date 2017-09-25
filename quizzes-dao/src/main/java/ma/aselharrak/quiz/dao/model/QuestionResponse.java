@@ -24,8 +24,17 @@ public class QuestionResponse {
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "response_id", nullable = false)
 	private Response response;
-	
-	public QuestionResponse() {}
+	private boolean status;
+
+	public QuestionResponse() {
+	}
+
+	public QuestionResponse(Question question, Response response, boolean status) {
+		super();
+		this.question = question;
+		this.response = response;
+		this.status = status;
+	}
 
 	public long getId() {
 		return id;
@@ -49,6 +58,14 @@ public class QuestionResponse {
 
 	public void setResponse(Response response) {
 		this.response = response;
+	}
+
+	public boolean isStatus() {
+		return status;
+	}
+
+	public void setStatus(boolean status) {
+		this.status = status;
 	}
 
 }

@@ -11,6 +11,9 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
+import org.hibernate.annotations.Cascade;
+import org.hibernate.annotations.CascadeType;
+
 /**
  * @author AELHARRAK
  *
@@ -21,20 +24,23 @@ public class Question {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
-	private String question;
+	private String label;
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "question")
+	@Cascade({ CascadeType.SAVE_UPDATE, CascadeType.DELETE })
 	private Set<TestQuestion> testQuestions;
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "response")
+	@Cascade({ CascadeType.SAVE_UPDATE, CascadeType.DELETE })
 	private Set<QuestionResponse> questionResponses;
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "level_id", nullable = false)
 	private Level level;
 
-	public Question() {}
+	public Question() {
+	}
 
-	public Question(String question) {
+	public Question(String label) {
 		super();
-		this.question = question;
+		this.label = label;
 	}
 
 	public long getId() {
@@ -45,12 +51,12 @@ public class Question {
 		this.id = id;
 	}
 
-	public String getQuestion() {
-		return question;
+	public String getLabel() {
+		return label;
 	}
 
-	public void setQuestion(String question) {
-		this.question = question;
+	public void setLabel(String label) {
+		this.label = label;
 	}
 
 	public Set<TestQuestion> getTestQuestions() {

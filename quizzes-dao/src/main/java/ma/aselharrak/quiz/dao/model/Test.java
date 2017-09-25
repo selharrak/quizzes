@@ -14,6 +14,9 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
+import org.hibernate.annotations.Cascade;
+import org.hibernate.annotations.CascadeType;
+
 /**
  * @author AELHARRAK
  *
@@ -30,12 +33,11 @@ public class Test {
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "quiz_id", nullable = false)
 	private Quiz quiz;
-	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "level_id", nullable = false)
-	private Level level;
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "test")
+	@Cascade({ CascadeType.SAVE_UPDATE, CascadeType.DELETE })
 	private Set<TestQuestion> testQuestions;
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "test")
+	@Cascade({ CascadeType.SAVE_UPDATE, CascadeType.DELETE })
 	private Set<UserTest> userTests;
 	
 	public Test() {}
@@ -84,14 +86,6 @@ public class Test {
 
 	public void setQuiz(Quiz quiz) {
 		this.quiz = quiz;
-	}
-
-	public Level getLevel() {
-		return level;
-	}
-
-	public void setLevel(Level level) {
-		this.level = level;
 	}
 
 	public Set<TestQuestion> getTestQuestions() {

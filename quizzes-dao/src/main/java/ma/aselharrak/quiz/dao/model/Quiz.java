@@ -9,6 +9,9 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
+import org.hibernate.annotations.Cascade;
+import org.hibernate.annotations.CascadeType;
+
 /**
  * @author AELHARRAK
  *
@@ -22,6 +25,7 @@ public class Quiz {
 	private String label;
 	private String description;
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "quiz")
+	@Cascade({ CascadeType.SAVE_UPDATE, CascadeType.DELETE })
 	private Set<Test> tests;
 
 	public Quiz() {}
