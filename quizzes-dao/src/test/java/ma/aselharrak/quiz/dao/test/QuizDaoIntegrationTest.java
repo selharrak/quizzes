@@ -111,20 +111,20 @@ public class QuizDaoIntegrationTest {
 		fristQuestionResponse.setStatus(false);
 		questionResponseDao.create(fristQuestionResponse);
 		
-		fristQuestionResponse.setQuestion(questionDao.read(question.getId()));
-		fristQuestionResponse.setResponse(responseDao.read(secondResponse.getId()));
-		fristQuestionResponse.setStatus(true);
-		questionResponseDao.create(fristQuestionResponse);
+		secondQuestionResponse.setQuestion(questionDao.read(question.getId()));
+		secondQuestionResponse.setResponse(responseDao.read(secondResponse.getId()));
+		secondQuestionResponse.setStatus(true);
+		questionResponseDao.create(secondQuestionResponse);
 		
-		fristQuestionResponse.setQuestion(questionDao.read(question.getId()));
-		fristQuestionResponse.setResponse(responseDao.read(thirdResponse.getId()));
-		fristQuestionResponse.setStatus(false);
-		questionResponseDao.create(fristQuestionResponse);
+		thirdQuestionResponse.setQuestion(questionDao.read(question.getId()));
+		thirdQuestionResponse.setResponse(responseDao.read(thirdResponse.getId()));
+		thirdQuestionResponse.setStatus(false);
+		questionResponseDao.create(thirdQuestionResponse);
 		
-		fristQuestionResponse.setQuestion(questionDao.read(question.getId()));
-		fristQuestionResponse.setResponse(responseDao.read(fourthResponse.getId()));
-		fristQuestionResponse.setStatus(false);
-		questionResponseDao.create(fristQuestionResponse);
+		fourthQuestionResponse.setQuestion(questionDao.read(question.getId()));
+		fourthQuestionResponse.setResponse(responseDao.read(fourthResponse.getId()));
+		fourthQuestionResponse.setStatus(false);
+		questionResponseDao.create(fourthQuestionResponse);
 		
 	}
 

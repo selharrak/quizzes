@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Client :  127.0.0.1
--- GÃ©nÃ©rÃ© le :  Lun 25 Septembre 2017 Ã  09:58
+-- Généré le :  Lun 25 Septembre 2017 à 10:14
 -- Version du serveur :  5.7.14
 -- Version de PHP :  5.6.25
 
@@ -17,7 +17,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de donnÃ©es :  `quizzes`
+-- Base de données :  `quizzes`
 --
 
 -- --------------------------------------------------------
@@ -76,7 +76,10 @@ CREATE TABLE `questionresponse` (
 --
 
 INSERT INTO `questionresponse` (`id`, `status`, `question_id`, `response_id`) VALUES
-(1, b'0', 1, 1);
+(1, b'0', 1, 1),
+(2, b'1', 1, 2),
+(3, b'0', 1, 3),
+(4, b'0', 1, 4);
 
 -- --------------------------------------------------------
 
@@ -113,10 +116,10 @@ CREATE TABLE `response` (
 --
 
 INSERT INTO `response` (`id`, `label`) VALUES
-(1, 'C\'est le mÃªme langage, mais le nom  JavaScript  est utilisÃ© pour le code s\'exÃ©cutant dans une page Web.'),
-(2, 'Ce sont deux langages diffÃ©rents, malgrÃ© quelques points communs dans la syntaxe.'),
-(3, 'Java est une version amÃ©liorÃ©e de JavaScript.'),
-(4, 'Java est une Ã®le, Ã§a n\'a rien Ã  voir !');
+(1, 'C\'est le même langage, mais le nom  JavaScript  est utilisé pour le code s\'exécutant dans une page Web.'),
+(2, 'Ce sont deux langages différents, malgré quelques points communs dans la syntaxe.'),
+(3, 'Java est une version améliorée de JavaScript.'),
+(4, 'Java est une île, ça n\'a rien à voir !');
 
 -- --------------------------------------------------------
 
@@ -209,7 +212,7 @@ CREATE TABLE `usertest` (
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
--- Index pour les tables exportÃ©es
+-- Index pour les tables exportées
 --
 
 --
@@ -289,7 +292,7 @@ ALTER TABLE `usertest`
   ADD KEY `FKi58ko3pfa7mdfa239gdulwg9a` (`user_id`);
 
 --
--- AUTO_INCREMENT pour les tables exportÃ©es
+-- AUTO_INCREMENT pour les tables exportées
 --
 
 --
@@ -306,7 +309,7 @@ ALTER TABLE `question`
 -- AUTO_INCREMENT pour la table `questionresponse`
 --
 ALTER TABLE `questionresponse`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT pour la table `quiz`
 --
