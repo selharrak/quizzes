@@ -11,6 +11,9 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
+import org.hibernate.annotations.Cascade;
+import org.hibernate.annotations.CascadeType;
+
 /**
  * @author AELHARRAK
  *
@@ -23,8 +26,10 @@ public class Question {
 	private long id;
 	private String label;
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "question")
+	@Cascade({ CascadeType.SAVE_UPDATE, CascadeType.DELETE })
 	private Set<TestQuestion> testQuestions;
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "response")
+	@Cascade({ CascadeType.SAVE_UPDATE, CascadeType.DELETE })
 	private Set<QuestionResponse> questionResponses;
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "level_id", nullable = false)

@@ -10,6 +10,9 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
+import org.hibernate.annotations.Cascade;
+import org.hibernate.annotations.CascadeType;
+
 /**
  * @author AELHARRAK
  *
@@ -26,8 +29,10 @@ public class User {
 	private boolean enabled;
 	private Date created;
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "user")
+	@Cascade({ CascadeType.SAVE_UPDATE, CascadeType.DELETE })
 	private Set<UserRole> userRoles;
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "user")
+	@Cascade({ CascadeType.SAVE_UPDATE, CascadeType.DELETE })
 	private Set<UserTest> userTests;
 	
 	public User() {}

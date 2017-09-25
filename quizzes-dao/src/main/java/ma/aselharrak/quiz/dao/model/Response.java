@@ -9,6 +9,9 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
+import org.hibernate.annotations.Cascade;
+import org.hibernate.annotations.CascadeType;
+
 /**
  * @author AELHARRAK
  *
@@ -21,6 +24,7 @@ public class Response {
 	private long id;
 	private String label;
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "response")
+	@Cascade({ CascadeType.SAVE_UPDATE, CascadeType.DELETE })
 	private Set<QuestionResponse> questionResponses;
 
 	public Response() {

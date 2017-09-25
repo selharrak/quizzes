@@ -24,8 +24,15 @@ public class TestQuestion {
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "question_id", nullable = false)
 	private Question question;
-	
-	public TestQuestion() {}
+
+	public TestQuestion(Test test, Question question) {
+		super();
+		this.test = test;
+		this.question = question;
+	}
+
+	public TestQuestion() {
+	}
 
 	public long getId() {
 		return id;
