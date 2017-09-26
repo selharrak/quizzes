@@ -23,8 +23,7 @@ public class Role {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
 	private String label;
-	@OneToMany(fetch = FetchType.LAZY, mappedBy = "role")
-	@Cascade({ CascadeType.SAVE_UPDATE, CascadeType.DELETE })
+	@OneToMany(fetch = FetchType.EAGER, mappedBy = "role")
 	private Set<UserRole> userRoles;
 
 	public Role() {

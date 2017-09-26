@@ -14,9 +14,6 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
-import org.hibernate.annotations.Cascade;
-import org.hibernate.annotations.CascadeType;
-
 /**
  * @author AELHARRAK
  *
@@ -30,14 +27,12 @@ public class Test {
 	private String label;
 	private String description;
 	private int duration;
-	@ManyToOne(fetch = FetchType.LAZY)
+	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "quiz_id", nullable = false)
 	private Quiz quiz;
-	@OneToMany(fetch = FetchType.LAZY, mappedBy = "test")
-	@Cascade({ CascadeType.SAVE_UPDATE, CascadeType.DELETE })
+	@OneToMany(fetch = FetchType.EAGER, mappedBy = "test")
 	private Set<TestQuestion> testQuestions;
-	@OneToMany(fetch = FetchType.LAZY, mappedBy = "test")
-	@Cascade({ CascadeType.SAVE_UPDATE, CascadeType.DELETE })
+	@OneToMany(fetch = FetchType.EAGER, mappedBy = "test")
 	private Set<UserTest> userTests;
 	
 	public Test() {}

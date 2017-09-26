@@ -11,6 +11,7 @@
 
     <title>3 Col Portfolio - Start Bootstrap Template</title>
 	<link rel="stylesheet" href="https://blackrockdigital.github.io/startbootstrap-3-col-portfolio/vendor/bootstrap/css/bootstrap.min.css">
+	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 	<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
@@ -33,12 +34,6 @@ body {
 .pagination {
     margin-bottom: 30px;
 }
-
-.search {
-  padding-top: 4rem;
-  padding-bottom: 4rem;
-}
-
 .jumbotron {
   padding-top: 6rem;
   padding-bottom: 6rem;
@@ -61,6 +56,91 @@ body {
 .jumbotron .container {
   max-width: 40rem;
 }
+
+
+
+
+
+.quiz-item{
+    max-width: none;
+    margin-right: auto;
+    margin-left: auto;
+    display: flex;
+    flex-flow: row wrap;
+    border: 5px solid #f8bd32;
+    background-color: #f8bd32;
+    box-sizing: border-box;
+}
+.additional-info {
+    flex: 0 0 auto;
+    padding-right: 2.5rem;
+    padding-left: 2.5rem;
+    width: 300px;
+        background-color: #fff;
+            padding: 40px;
+    padding: 2.5rem;
+    }
+    
+    
+    .info-cards{
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
+    position: relative;
+    left: 50%;
+        margin-bottom: 25px;
+    margin-bottom: 1.5625rem;
+    display: inline-block;}
+    
+    .info-card{
+        margin-right: 15px;
+    margin-right: .9375rem;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    background-color: #4d5755;
+    border: 2px solid #4d5755;
+    text-align: center;
+    min-width: 90px;
+    width: auto;
+    display: inline-block;}
+    
+    
+.type {
+    font-size: 11px;
+    font-size: .6875rem;
+    text-transform: uppercase;
+    display: block;
+    font-weight: 700;
+    padding: 10px;
+    padding: .625rem;
+    color: #fff;
+}
+
+
+    .value{
+        font-size: 26px;
+    font-size: 1.625rem;
+    background-color: #fff;
+    font-weight: 700;
+    }
+    
+    
+    .fa{
+        font-size: 30px;
+    font-size: 1.875rem;
+    margin-bottom: 5px;
+    margin-bottom: .3125rem;
+    color: #f8bd32;
+        display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    }
 </style>
   </head>
   
@@ -97,160 +177,65 @@ body {
         </div>
       </div>
     </nav>
-
-<!--  
-    <section class="jumbotron text-center">
-      <div class="container">
-        <h1 class="jumbotron-heading text-white">Quizzes</h1>
-        <img height="150" src="http://www.ekodefi.com/wp-content/themes/ekodefi-v2/media/img/icon-nav-challenges-health-fr.png"/>
-        <p class="lead text-white">Test yourself everyday and exam your knowledge to keep your up to date it's free !</p>
-        <p>
-          <a href="#" class="btn btn-primary">Main call to action</a>
-          <a href="#" class="btn btn-secondary">Secondary action</a>
-        </p>
-      </div>
-    </section>
- -->   
-    
     
     <!-- Page Content -->
     <div class="container">
- 
- 
-<style>
-/* search box */
 
-.button_box2 {
-}
-/*-------------------------------------*/
-.cf:before, .cf:after{
-content:"";
-display:table;
-}
-.cf:after{
-clear:both;
-}
-.cf{
-zoom:1;
-}
-/*-------------------------------------*/
+      <!-- Page Heading -->
+      <h1 class="my-4"> ${title}</h1> 
+      <a href="#"> < Back to domains</a>
 
-.form-wrapper-2 {
-width: 100%;
-padding: 15px;
-background: #555;
--moz-border-radius: 10px;
--webkit-border-radius: 10px;
-border-radius: 10px;
--moz-box-shadow: 0 1px 1px rgba(0,0,0,.4) inset, 0 1px 0 rgba(255,255,255,.2);
--webkit-box-shadow: 0 1px 1px rgba(0,0,0,.4) inset, 0 1px 0 rgba(255,255,255,.2);
-box-shadow: 0 1px 1px rgba(0,0,0,.4) inset, 0 1px 0 rgba(255,255,255,.2);
-}
-.form-wrapper-2 input {
-width: 89%;
-padding: 12px 10px;
-float: left;
-font: bold 15px 'Raleway', sans-serif;
-border: 0;
-background: #eee;
--moz-border-radius: 3px 0 0 3px;
--webkit-border-radius: 3px 0 0 3px;
-border-radius: 3px 0 0 3px;
-}
-.form-wrapper-2 input:focus {
-outline: 0;
-background: #fff;
--moz-box-shadow: 0 0 2px rgba(0,0,0,.8) inset;
--webkit-box-shadow: 0 0 2px rgba(0,0,0,.8) inset;
-box-shadow: 0 0 2px rgba(0,0,0,.8) inset;
-}
-.form-wrapper-2 input::-webkit-input-placeholder {
-color: #999;
-font-weight: normal;
-font-style: italic;
-}
-.form-wrapper-2 input:-moz-placeholder {
-color: #999;
-font-weight: normal;
-font-style: italic;
-}
-.form-wrapper-2 input:-ms-input-placeholder {
-color: #999;
-font-weight: normal;
-font-style: italic;
-}
-.form-wrapper-2 button {
-overflow: visible;
-position: relative;
-float: right;
-border: 0;
-padding: 0;
-cursor: pointer;
-height: 40px;
-width: 110px;
-font: bold 15px/40px 'Raleway', sans-serif;
-color: #fff;
-text-transform: uppercase;
-background: #D88F3C;
--moz-border-radius: 0 3px 3px 0;
--webkit-border-radius: 0 3px 3px 0;
-border-radius: 0 3px 3px 0;
-text-shadow: 0 -1px 0 rgba(0, 0 ,0, .3);
-}
-.form-wrapper-2 button:hover{
-background: #FA8807;
-}
-.form-wrapper-2 button:active,
-.form-wrapper-2 button:focus{
-background: #c42f2f;
-}
-.form-wrapper-2 button:before {
-content: '';
-position: absolute;
-border-width: 8px 8px 8px 0;
-border-style: solid solid solid none;
-border-color: transparent #D88F3C transparent;
-top: 12px;
-left: -6px;
-}
-.form-wrapper-2 button:hover:before{
-border-right-color: #FA8807;
-}
-.form-wrapper-2 button:focus:before{
-border-right-color: #c42f2f;
-}
-.form-wrapper-2 button::-moz-focus-inner {
-border: 0;
-padding: 0;
-}
-</style>
-<div class="search">
-	<div class="button_box2">
-		<form class="form-wrapper-2 cf">
-			<input type="text" placeholder="Search here..." required>
-			<button type="submit">Search</button>
-		</form>
-	</div>
-</div>
 
-      <div class="row">
-		<c:forEach items="${quizzes}" var="quizze">
-		  <div class="col-lg-4 col-sm-6 portfolio-item">
-		          <div class="card h-100">
-		            <div class="card-body">
-		              <h4 class="card-title">
-		             	<c:url value="quiz/${quizze.id}/${quizze.label}" var="url"/>
-		                <a href="${url}"><c:out value="${quizze.label}" /></a>
-		              </h4>
-		              <c:out value="${quizze.description}" />
-		              <p class="card-text">Lorem ipsum dolor sit amet, conseiunt, illum tempora ex quae? Nihil, dolorem!</p>
-		              
-		            </div>
-		          </div>
-		        </div>
+      <section>
+		<c:forEach items="${tests}" var="test">
+		  <article class="col-lg-4 col-sm-6 quiz-item">
+			  <div class="additional-info">
+			   	
+			   	<div class="info-cards">
+			   		<div class="info-card">
+			   			<div class="type">
+			   				<i class="fa fa-question"></i>
+			   				<span class="label"> QUESTIONS</span>
+			   			</div>
+			   			<div class="value">
+			   				${test.nbQuestion }
+			   			</div>
+			   		</div>
+			   		
+			   		<div class="info-card">
+			   			<div class="type">
+			   				<i class="fa fa-clock-o"></i>
+			   				<span class="label"> MINUTES</span>
+			   			</div>
+			   			<div class="value">
+			   				${test.duration }
+			   			</div>
+			   		</div>			   		
+			   		
+			   	</div>
+			   	<div class="grouped-info">
+			   		<div class="quiz-level">
+			   			<div class="label">
+			   				${test.duration } medium level
+			   			</div>
+			   			<div class="level">
+			   				<i class="bar"></i><i class="bar"></i><i class="bar"></i><i class="bar empty"></i>
+			   			</div>
+			   		</div>
+			   	</div>
+			  </div>
+			  
+			  <div  class="main-info">
+			  	<h4 class="card-title">
+	             	<c:url value="quiz/${test.id}" var="url"/>
+	                <a href="${url}"><c:out value="${test.label}" /></a>
+              	</h4>
+              <c:out value="${test.description}" />
+              <p class="card-text"> ---</p>
+			  </div>
+      		</article>
 		</c:forEach>
-      </div>
-      <!-- /.row -->
+      </section>
 
       <!-- Pagination -->
       <ul class="pagination justify-content-center">

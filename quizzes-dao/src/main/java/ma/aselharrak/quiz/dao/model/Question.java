@@ -25,13 +25,11 @@ public class Question {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
 	private String label;
-	@OneToMany(fetch = FetchType.LAZY, mappedBy = "question")
-	@Cascade({ CascadeType.SAVE_UPDATE, CascadeType.DELETE })
+	@OneToMany(fetch = FetchType.EAGER, mappedBy = "question")
 	private Set<TestQuestion> testQuestions;
-	@OneToMany(fetch = FetchType.LAZY, mappedBy = "response")
-	@Cascade({ CascadeType.SAVE_UPDATE, CascadeType.DELETE })
+	@OneToMany(fetch = FetchType.EAGER, mappedBy = "response")
 	private Set<QuestionResponse> questionResponses;
-	@ManyToOne(fetch = FetchType.LAZY)
+	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "level_id", nullable = false)
 	private Level level;
 

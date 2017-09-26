@@ -6,11 +6,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import ma.aselharrak.quiz.web.data.QuizData;
+import ma.aselharrak.quiz.web.data.TestData;
 import ma.aselharrak.quiz.web.facade.QuizFacade;
 /**
  * 
@@ -30,10 +31,14 @@ public class QuizController {
 		return "quizzes";
 	}
 
-	@GetMapping("/quiz")
-	public String getQuiz(Model m, @RequestParam(value="quiz", required=true) String quiz) {
-		//m.addAttribute("quizzes",quizFacade.getAll());
-		return quiz;
+	@RequestMapping("/quiz/{id}/{label}")
+	public String getQuiz(Model model,
+						  @PathVariable Long id,
+						  @PathVariable String label ) {
+		
+		model.addAttribute("title",label);
+		model.addAttribute("tests",quizFacade.getTestsBy(id));
+		return "quiz";
 	}
 
 	
@@ -45,4 +50,9 @@ public class QuizController {
 		return quizFacade.getAll();
 	}
 	
+	@RequestMapping("/quiz/jsoon/{id}/{label}")
+	@ResponseBody
+	public Set<TestData> getQuizJson(  @PathVariable Long id, @PathVariable String label ) {
+		return quizFacade.getTestsBy(id);
+	}
 }

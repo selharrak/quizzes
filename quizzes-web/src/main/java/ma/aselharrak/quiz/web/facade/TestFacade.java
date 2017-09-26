@@ -10,10 +10,10 @@ import ma.aselharrak.quiz.web.data.TestData;
  * @author AELHARRAK
  *
  */
-public interface QuizFacade {
+public interface TestFacade {
 	
 	public Set<QuizData> getAll();
 	
-	public Set<TestData> getTestsBy(final Long idQuiz);
+	public Set<TestData> getTestsById(final Long idQuiz);
 	
 }
