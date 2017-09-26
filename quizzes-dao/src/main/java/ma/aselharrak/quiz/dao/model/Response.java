@@ -23,8 +23,7 @@ public class Response {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
 	private String label;
-	@OneToMany(fetch = FetchType.LAZY, mappedBy = "response")
-	@Cascade({ CascadeType.SAVE_UPDATE, CascadeType.DELETE })
+	@OneToMany(fetch = FetchType.EAGER, mappedBy = "response")
 	private Set<QuestionResponse> questionResponses;
 
 	public Response() {

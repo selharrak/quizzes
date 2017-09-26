@@ -23,8 +23,7 @@ public class Level {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
 	private String label;
-	@OneToMany(fetch = FetchType.LAZY, mappedBy = "level")
-	@Cascade({ CascadeType.SAVE_UPDATE, CascadeType.DELETE })
+	@OneToMany(fetch = FetchType.EAGER, mappedBy = "level")
 	private Set<Question> questions;
 
 	public Level() {

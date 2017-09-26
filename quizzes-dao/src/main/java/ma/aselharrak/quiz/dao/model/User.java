@@ -28,11 +28,9 @@ public class User {
 	private String userName;
 	private boolean enabled;
 	private Date created;
-	@OneToMany(fetch = FetchType.LAZY, mappedBy = "user")
-	@Cascade({ CascadeType.SAVE_UPDATE, CascadeType.DELETE })
+	@OneToMany(fetch = FetchType.EAGER, mappedBy = "user")
 	private Set<UserRole> userRoles;
-	@OneToMany(fetch = FetchType.LAZY, mappedBy = "user")
-	@Cascade({ CascadeType.SAVE_UPDATE, CascadeType.DELETE })
+	@OneToMany(fetch = FetchType.EAGER, mappedBy = "user")
 	private Set<UserTest> userTests;
 	
 	public User() {}
