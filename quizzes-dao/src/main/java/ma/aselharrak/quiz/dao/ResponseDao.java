@@ -11,4 +11,5 @@ import ma.aselharrak.quiz.dao.model.Response;
  */
 public interface ResponseDao extends CrudDao<Response, Long> {
 
+	
 }

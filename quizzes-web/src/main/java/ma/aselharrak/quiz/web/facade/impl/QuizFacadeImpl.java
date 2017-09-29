@@ -32,6 +32,7 @@ public class QuizFacadeImpl implements QuizFacade {
 	@Autowired
 	private TestConverter testConverter;
 	
+	
 	@Override
 	public Set<QuizData> getAll() {
 		final Collection<Quiz> quizzes = quizService.getAll();
@@ -46,4 +47,9 @@ public class QuizFacadeImpl implements QuizFacade {
 		return tests;
 	}
 
+	
+
+
+	
+	
 }

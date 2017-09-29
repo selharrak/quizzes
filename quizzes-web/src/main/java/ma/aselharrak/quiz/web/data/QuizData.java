@@ -18,6 +18,7 @@ public class QuizData implements Serializable {
 	private Long id;
 	private String label;
 	private String description;
+	private int nbQuiz;
 
 	public Long getId() {
 		return id;
@@ -42,5 +43,11 @@ public class QuizData implements Serializable {
 	public void setDescription(String description) {
 		this.description = description;
 	}
-
+	
+	public int getNbQuiz() {
+		return nbQuiz;
+	}
+	public void setNbQuiz(int nbQuiz) {
+		this.nbQuiz = nbQuiz;
+	}
 }

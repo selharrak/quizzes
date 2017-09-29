@@ -27,6 +27,7 @@ public class TestConverter implements Converter<Test, TestData> {
 		testData.setDuration(test.getDuration());
 		testData.setDescription(test.getDescription());
 		testData.setNbQuestion(test.getTestQuestions().size());
+		testData.setTestQuestions(test.getTestQuestions());
 		//testData.setLevel(test.getLevel());
 		return testData;
 	}

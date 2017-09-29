@@ -40,7 +40,31 @@ public class QuizController {
 		model.addAttribute("tests",quizFacade.getTestsBy(id));
 		return "quiz";
 	}
+	
+	
+	
+	
+	@RequestMapping("/quiz/test/{id}")
+	public String getQuiz_(Model model,
+						  @PathVariable Long id ) {
+		
+		model.addAttribute("tests",quizFacade.getTestsBy(id));
+		return "start";
+	}
+	
+	
 
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	
 	
