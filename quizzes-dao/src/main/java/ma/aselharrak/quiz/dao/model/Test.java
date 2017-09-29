@@ -34,14 +34,23 @@ public class Test {
 	private Set<TestQuestion> testQuestions;
 	@OneToMany(fetch = FetchType.EAGER, mappedBy = "test")
 	private Set<UserTest> userTests;
+	@ManyToOne(fetch = FetchType.EAGER)
+	@JoinColumn(name = "level_id", nullable = false)
+	private Level level;
+	
 	
 	public Test() {}
 
+
+
 	public Test(String label, String description, int duration) {
+		super();
 		this.label = label;
 		this.description = description;
 		this.duration = duration;
 	}
+
+
 
 	public long getId() {
 		return id;
@@ -97,6 +106,18 @@ public class Test {
 
 	public void setUserTests(Set<UserTest> userTests) {
 		this.userTests = userTests;
+	}
+
+
+
+	public Level getLevel() {
+		return level;
+	}
+
+
+
+	public void setLevel(Level level) {
+		this.level = level;
 	}
 
 }

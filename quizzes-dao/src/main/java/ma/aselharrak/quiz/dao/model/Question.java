@@ -29,9 +29,7 @@ public class Question {
 	private Set<TestQuestion> testQuestions;
 	@OneToMany(fetch = FetchType.EAGER, mappedBy = "response")
 	private Set<QuestionResponse> questionResponses;
-	@ManyToOne(fetch = FetchType.EAGER)
-	@JoinColumn(name = "level_id", nullable = false)
-	private Level level;
+
 
 	public Question() {
 	}
@@ -73,12 +71,6 @@ public class Question {
 		this.questionResponses = questionResponses;
 	}
 
-	public Level getLevel() {
-		return level;
-	}
-
-	public void setLevel(Level level) {
-		this.level = level;
-	}
+	
 
 }

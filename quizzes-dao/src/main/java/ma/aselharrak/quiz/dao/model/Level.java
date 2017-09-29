@@ -24,7 +24,7 @@ public class Level {
 	private long id;
 	private String label;
 	@OneToMany(fetch = FetchType.EAGER, mappedBy = "level")
-	private Set<Question> questions;
+	private Set<Test> tests;
 
 	public Level() {
 	}
@@ -50,12 +50,13 @@ public class Level {
 		this.label = label;
 	}
 
-	public Set<Question> getQuestions() {
-		return questions;
+	public Set<Test> getTests() {
+		return tests;
 	}
 
-	public void setQuestions(Set<Question> questions) {
-		this.questions = questions;
+	public void setTests(Set<Test> tests) {
+		this.tests = tests;
 	}
+
 
 }

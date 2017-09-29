@@ -3,6 +3,8 @@
  */
 package ma.aselharrak.quiz.dao.test;
 
+import java.util.Date;
+
 import org.junit.Before;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,6 +19,7 @@ import ma.aselharrak.quiz.dao.QuizDao;
 import ma.aselharrak.quiz.dao.ResponseDao;
 import ma.aselharrak.quiz.dao.TestDao;
 import ma.aselharrak.quiz.dao.TestQuestionDao;
+import ma.aselharrak.quiz.dao.UserDao;
 import ma.aselharrak.quiz.dao.model.Level;
 import ma.aselharrak.quiz.dao.model.Question;
 import ma.aselharrak.quiz.dao.model.QuestionResponse;
@@ -24,6 +27,7 @@ import ma.aselharrak.quiz.dao.model.Quiz;
 import ma.aselharrak.quiz.dao.model.Response;
 import ma.aselharrak.quiz.dao.model.Test;
 import ma.aselharrak.quiz.dao.model.TestQuestion;
+import ma.aselharrak.quiz.dao.model.User;
 
 /**
  * @author SELHARRAK
@@ -49,6 +53,9 @@ public class QuizDaoIntegrationTest {
 	@Autowired
 	LevelDao levelDao;
 
+	@Autowired
+	UserDao userDao;
+	
 	Quiz quizz;
 	Test test;
 	Question question;
@@ -56,6 +63,7 @@ public class QuizDaoIntegrationTest {
 	Response firstResponse, secondResponse, thirdResponse, fourthResponse;
 	QuestionResponse fristQuestionResponse, secondQuestionResponse, thirdQuestionResponse, fourthQuestionResponse;
 	Level beginner, intermediate;
+	User user;
 
 	@Before
 	public void setUp() {
@@ -80,6 +88,10 @@ public class QuizDaoIntegrationTest {
 		secondQuestionResponse = new QuestionResponse();
 		thirdQuestionResponse = new QuestionResponse();
 		fourthQuestionResponse = new QuestionResponse();
+		
+		
+		user = new User("amine.elharrak@gmail.com", "123123", "aminem9");
+	
 
 	}
 
@@ -92,9 +104,10 @@ public class QuizDaoIntegrationTest {
 		quizDao.create(quizz);
 		
 		test.setQuiz(quizDao.read(quizz.getId()));
+		test.setLevel(levelDao.read(beginner.getId()));
 		testDao.create(test);
 		
-		question.setLevel(levelDao.read(beginner.getId()));
+		
 		questionDao.create(question);
 		
 		testQuestion.setQuestion(questionDao.read(question.getId()));
@@ -125,6 +138,10 @@ public class QuizDaoIntegrationTest {
 		fourthQuestionResponse.setResponse(responseDao.read(fourthResponse.getId()));
 		fourthQuestionResponse.setStatus(false);
 		questionResponseDao.create(fourthQuestionResponse);
+		
+		user.setEnabled(true);
+		user.setCreated(new Date());
+		userDao.create(user);
 		
 	}
 

@@ -1,6 +1,9 @@
 package ma.aselharrak.quiz.web.data;
 
 import java.io.Serializable;
+import java.util.Set;
+
+import ma.aselharrak.quiz.dao.model.TestQuestion;
 
 public class TestData implements Serializable {
 
@@ -11,7 +14,8 @@ public class TestData implements Serializable {
 	private String description;
 	private int duration;
 	private int nbQuestion;
-
+	private Set<TestQuestion> testQuestions;
+	
 	public long getId() {
 		return id;
 	}
@@ -50,4 +54,17 @@ public class TestData implements Serializable {
 	public void setNbQuestion(int nbQuestion) {
 		this.nbQuestion = nbQuestion;
 	}
+
+	public Set<TestQuestion> getTestQuestions() {
+		return testQuestions;
+	}
+
+	public void setTestQuestions(Set<TestQuestion> testQuestions) {
+		this.testQuestions = testQuestions;
+	}
+
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
+	
 }

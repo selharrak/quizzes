@@ -1,10 +1,4 @@
 --
--- Base de données :  `quizzes`
---
-
--- --------------------------------------------------------
-
---
 -- Contenu de la table `level`
 --
 
@@ -18,17 +12,17 @@ INSERT INTO `level` (`id`, `label`) VALUES
 -- Contenu de la table `question`
 --
 
-INSERT INTO `question` (`id`, `label`, `level_id`) VALUES
-(1, 'Quel est le rapport entre Java et JavaScript ?', 1),
-(2, 'Laquelle de ces syntaxes est correcte ?', 1),
-(3, 'Quel attribut des noeuds de l''arbre DOM correspond à l''attribut (X)HTML class?', 1),
-(4, 'Dans un fichier JavaScript externe (.js), il faut ?', 1),
-(5, 'Lequel de ces types d''événements n''existe pas?', 1),
-(6, 'Quelle méthode n''existe pas dans le DOM ?', 1),
-(7, 'Laquelle de ces propositions est un nom de variable valide en JavaScript ?', 1),
-(8, 'Dans une boucle, l''instruction continue permet de :', 1),
-(9, 'var iNum = 12; iNum %= 2; A la suite de cette expression, combien vaut iNum ?', 1),
-(10, 'Quelle méthode permet de comparer deux chaînes texte ?', 1);
+INSERT INTO `question` (`id`, `label`) VALUES
+(1, 'Quel est le rapport entre Java et JavaScript ?'),
+(2, 'Laquelle de ces syntaxes est correcte ?'),
+(3, 'Quel attribut des noeuds de l''arbre DOM correspond à l''attribut (X)HTML class?'),
+(4, 'Dans un fichier JavaScript externe (.js), il faut ?'),
+(5, 'Lequel de ces types d''événements n''existe pas?'),
+(6, 'Quelle méthode n''existe pas dans le DOM ?'),
+(7, 'Laquelle de ces propositions est un nom de variable valide en JavaScript ?'),
+(8, 'Dans une boucle, l''instruction continue permet de :'),
+(9, 'var iNum = 12; iNum %= 2; A la suite de cette expression, combien vaut iNum ?'),
+(10, 'Quelle méthode permet de comparer deux chaînes texte ?');
 
 -- --------------------------------------------------------
 
@@ -154,15 +148,14 @@ INSERT INTO `response` (`id`, `label`) VALUES
 
 (40, 'Aucune des réponses précédentes.');
 
-
 -- --------------------------------------------------------
 
 --
 -- Contenu de la table `test`
 --
 
-INSERT INTO `test` (`id`, `description`, `duration`, `label`, `quiz_id`) VALUES
-(1, 'Description For JavaScript ...', 10, 'JAVASCRIPT', 1);
+INSERT INTO `test` (`id`, `description`, `duration`, `label`, `level_id`, `quiz_id`) VALUES
+(1, 'Description For JavaScript ...', 10, 'JAVASCRIPT', 1, 1);
 
 -- --------------------------------------------------------
 
@@ -181,3 +174,14 @@ INSERT INTO `testquestion` (`id`, `question_id`, `test_id`) VALUES
 (8, 8, 1),
 (9, 9, 1),
 (10, 10, 1);
+
+-- --------------------------------------------------------
+
+--
+-- Contenu de la table `user`
+--
+
+INSERT INTO `user` (`id`, `created`, `email`, `enabled`, `password`, `userName`) VALUES
+(1, '2017-09-27 23:17:29', 'amine.elharrak@gmail.com', b'1', '123123', 'aminem9');
+
+-- --------------------------------------------------------
