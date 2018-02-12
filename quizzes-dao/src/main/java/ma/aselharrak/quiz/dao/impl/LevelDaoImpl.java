@@ -12,7 +12,7 @@ import ma.aselharrak.quiz.dao.LevelDao;
 import ma.aselharrak.quiz.dao.model.Level;
 
 /**
- * @author SQLI-SELHARAK
+ * @author SELHARRAK
  *
  */
 @Repository

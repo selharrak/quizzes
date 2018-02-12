@@ -3,6 +3,7 @@
  */
 package ma.aselharrak.quiz.web.converter;
 
+import java.util.Collection;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -26,17 +27,14 @@ public class TestConverter implements Converter<Test, TestData> {
 		testData.setLabel(test.getLabel());
 		testData.setDuration(test.getDuration());
 		testData.setDescription(test.getDescription());
-		testData.setNbQuestion(test.getTestQuestions().size());
-		testData.setTestQuestions(test.getTestQuestions());
-		//testData.setLevel(test.getLevel());
+		testData.setNumberOfQuestions(test.getTestQuestions().size());
 		return testData;
 	}
 
-	public Set<TestData> convert(final Set<Test> tests) {
+	public Set<TestData> convert(final Collection<Test> tests) {
 		Set<TestData> testsData = new HashSet<>();
-		for (final Test test : tests) {
+		for (final Test test : tests)
 			testsData.add(convert(test));
-		}
 		return testsData;
 	}
 

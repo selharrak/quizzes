@@ -3,8 +3,11 @@
  */
 package ma.aselharrak.quiz.dao.impl;
 
+import java.util.Collection;
+
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
 
 import org.springframework.stereotype.Repository;
 
@@ -28,6 +31,16 @@ public class TestDaoImpl extends CrudDaoImpl<Test, Long> implements TestDao {
 	@Override
 	protected EntityManager getEntityManager() {
 		return entityManager;
+	}
+
+	@SuppressWarnings("unchecked")
+	@Override
+	public Collection<Test> getAllTestForQuiz(final Long idQuiz) {
+		final String FIND_ALL_TEST_FOR_QUIZ_QUERY = new StringBuilder("from ").append(Test.class.getName())
+				.append(" test where test.quiz.id = :idQuiz").toString();
+		final Query query = getEntityManager().createQuery(FIND_ALL_TEST_FOR_QUIZ_QUERY);
+		query.setParameter("idQuiz", idQuiz);
+		return query.getResultList();
 	}
 
 }

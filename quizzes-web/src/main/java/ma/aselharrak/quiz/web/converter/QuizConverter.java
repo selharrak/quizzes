@@ -26,7 +26,7 @@ public class QuizConverter implements Converter<Quiz, QuizData> {
 		quizData.setId(quiz.getId());
 		quizData.setLabel(quiz.getLabel());
 		quizData.setDescription(quiz.getDescription());
-		quizData.setNbQuiz(quiz.getTests().size());
+		quizData.setNumberOfTests(quiz.getTests().size());
 		return quizData;
 	}
 

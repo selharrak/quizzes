@@ -11,14 +11,12 @@ import java.io.Serializable;
  */
 public class QuizData implements Serializable {
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
+	
 	private Long id;
 	private String label;
 	private String description;
-	private int nbQuiz;
+	private int numberOfTests;
 
 	public Long getId() {
 		return id;
@@ -43,11 +41,13 @@ public class QuizData implements Serializable {
 	public void setDescription(String description) {
 		this.description = description;
 	}
-	
-	public int getNbQuiz() {
-		return nbQuiz;
+
+	public int getNumberOfTests() {
+		return numberOfTests;
 	}
-	public void setNbQuiz(int nbQuiz) {
-		this.nbQuiz = nbQuiz;
+
+	public void setNumberOfTests(int numberOfTests) {
+		this.numberOfTests = numberOfTests;
 	}
+
 }

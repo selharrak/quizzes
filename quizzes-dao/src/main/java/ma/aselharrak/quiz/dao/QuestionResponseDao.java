@@ -6,7 +6,7 @@ package ma.aselharrak.quiz.dao;
 import ma.aselharrak.quiz.dao.model.QuestionResponse;
 
 /**
- * @author SQLI-SELHARAK
+ * @author SELHARRAK
  *
  */
 public interface QuestionResponseDao extends CrudDao<QuestionResponse, Long> {

@@ -52,7 +52,6 @@ public class QuizDaoIntegrationTest {
 	ResponseDao responseDao;
 	@Autowired
 	LevelDao levelDao;
-
 	@Autowired
 	UserDao userDao;
 	

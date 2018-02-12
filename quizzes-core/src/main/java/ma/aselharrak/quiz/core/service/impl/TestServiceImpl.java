@@ -3,6 +3,8 @@
  */
 package ma.aselharrak.quiz.core.service.impl;
 
+import java.util.Collection;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -24,6 +26,11 @@ public class TestServiceImpl extends CrudServiceImpl<Test, Long> implements Test
 	@Override
 	protected CrudDao<Test, Long> getDao() {
 		return testDao;
+	}
+
+	@Override
+	public Collection<Test> getAllTestForQuiz(final Long idQuiz) {
+		return testDao.getAllTestForQuiz(idQuiz);
 	}
 
 }
